@@ -1,0 +1,9 @@
+{
+  "name": "media-plugin",
+  "description": "FFmpeg/FFplay toolkit for streaming, playback, transcoding, and media inspection",
+  "version": "1.0.0",
+  "author": {
+    "name": "LiveLabs"
+  },
+  "keywords": ["ffmpeg", "ffplay", "ffprobe", "streaming", "srt", "rtmp", "video", "media"]
+}

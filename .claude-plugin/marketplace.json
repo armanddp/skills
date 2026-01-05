@@ -13,6 +13,11 @@
       "name": "devops-plugin",
       "source": "./plugins/devops-plugin",
       "description": "DevOps skills for Kubernetes, Google Cloud, and infrastructure management"
+    },
+    {
+      "name": "media-plugin",
+      "source": "./plugins/media-plugin",
+      "description": "FFmpeg/FFplay toolkit for streaming, playback, transcoding, and media inspection"
     }
   ]
 }
