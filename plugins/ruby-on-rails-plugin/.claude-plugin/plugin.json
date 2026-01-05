@@ -1,0 +1,9 @@
+{
+  "name": "ruby-on-rails-plugin",
+  "description": "Ruby on Rails API development expertise with Basecamp/37signals vanilla Rails patterns",
+  "version": "1.0.0",
+  "author": {
+    "name": "LiveLabs"
+  },
+  "keywords": ["rails", "ruby", "api", "basecamp", "37signals", "rspec", "tdd"]
+}

@@ -23,6 +23,11 @@
       "name": "livekit-plugin",
       "source": "./plugins/livekit-plugin",
       "description": "LiveKit WebRTC expertise for room management, server/client SDKs, agents, and best practices"
+    },
+    {
+      "name": "ruby-on-rails-plugin",
+      "source": "./plugins/ruby-on-rails-plugin",
+      "description": "Ruby on Rails API development with Basecamp/37signals vanilla Rails patterns and TDD"
     }
   ]
 }
