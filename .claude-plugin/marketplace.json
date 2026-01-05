@@ -18,6 +18,11 @@
       "name": "media-plugin",
       "source": "./plugins/media-plugin",
       "description": "FFmpeg/FFplay toolkit for streaming, playback, transcoding, and media inspection"
+    },
+    {
+      "name": "livekit-plugin",
+      "source": "./plugins/livekit-plugin",
+      "description": "LiveKit WebRTC expertise for room management, server/client SDKs, agents, and best practices"
     }
   ]
 }

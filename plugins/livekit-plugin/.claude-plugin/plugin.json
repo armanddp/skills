@@ -1,0 +1,10 @@
+{
+  "name": "livekit-plugin",
+  "description": "LiveKit WebRTC expertise for room management, server/client SDKs, agents, and best practices",
+  "version": "1.0.0",
+  "author": {
+    "name": "LiveLabs"
+  },
+  "keywords": ["livekit", "webrtc", "realtime", "video", "audio", "streaming", "agents"],
+  "homepage": "https://docs.livekit.io"
+}
