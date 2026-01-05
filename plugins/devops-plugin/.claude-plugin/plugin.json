@@ -1,0 +1,10 @@
+{
+  "name": "devops-plugin",
+  "description": "DevOps skills for Kubernetes, Google Cloud, and infrastructure management",
+  "version": "1.1.0",
+  "author": {
+    "name": "LiveLabs"
+  },
+  "keywords": ["kubernetes", "k8s", "gcloud", "gcp", "devops", "infrastructure"],
+  "skills": "./skills"
+}

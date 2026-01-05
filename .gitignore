@@ -1,0 +1,13 @@
+# Local Claude settings
+.claude/settings.local.json
+
+# Project-specific devops config (created per-directory)
+.devops/
+
+# OS files
+.DS_Store
+
+# Editor files
+*.swp
+*.swo
+*~
