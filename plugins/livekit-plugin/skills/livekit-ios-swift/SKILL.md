@@ -30,11 +30,8 @@ import LiveKit
 
 ```swift
 let room = Room()
+room.add(delegate: self) // start receiving callbacks
 
-// Set delegate for events
-room.delegate = self
-
-// Connect to room
 try await room.connect(
     url: "wss://your-project.livekit.cloud",
     token: accessToken
@@ -68,28 +65,29 @@ try await room.connect(
 ```swift
 extension MyViewController: RoomDelegate {
 
-    // Connection state changes
-    func room(_ room: Room, didUpdateConnectionState state: ConnectionState) {
+    func room(_ room: Room,
+              didUpdateConnectionState state: ConnectionState,
+              from oldState: ConnectionState) {
         switch state {
         case .disconnected:
-            print("Disconnected from room")
+            print("Disconnected from room (was \(oldState))")
         case .connecting:
-            print("Connecting...")
+            print("Connecting…")
         case .reconnecting:
-            print("Reconnecting...")
+            print("Reconnecting…")
         case .connected:
             print("Connected!")
         }
     }
 
-    // Participant joined
-    func room(_ room: Room, participantDidJoin participant: RemoteParticipant) {
-        print("Participant joined: \(participant.identity)")
+    // Participant connected
+    func room(_ room: Room, participantDidConnect participant: RemoteParticipant) {
+        print("Participant connected: \(participant.identity)")
     }
 
-    // Participant left
-    func room(_ room: Room, participantDidLeave participant: RemoteParticipant) {
-        print("Participant left: \(participant.identity)")
+    // Participant disconnected
+    func room(_ room: Room, participantDidDisconnect participant: RemoteParticipant) {
+        print("Participant disconnected: \(participant.identity)")
     }
 
     // Track published
@@ -100,9 +98,8 @@ extension MyViewController: RoomDelegate {
 
     // Track subscribed (ready to render)
     func room(_ room: Room, participant: RemoteParticipant,
-              didSubscribeTrack track: Track,
-              publication: RemoteTrackPublication) {
-        if let videoTrack = track as? VideoTrack {
+              didSubscribeTrack publication: RemoteTrackPublication) {
+        if let videoTrack = publication.track as? VideoTrack {
             // Attach to view
             videoTrack.add(renderer: videoView)
         }
@@ -110,9 +107,8 @@ extension MyViewController: RoomDelegate {
 
     // Track unsubscribed
     func room(_ room: Room, participant: RemoteParticipant,
-              didUnsubscribeTrack track: Track,
-              publication: RemoteTrackPublication) {
-        if let videoTrack = track as? VideoTrack {
+              didUnsubscribeTrack publication: RemoteTrackPublication) {
+        if let videoTrack = publication.track as? VideoTrack {
             videoTrack.remove(renderer: videoView)
         }
     }
@@ -176,10 +172,9 @@ With `autoSubscribe: true` (default), tracks are subscribed automatically:
 
 ```swift
 func room(_ room: Room, participant: RemoteParticipant,
-          didSubscribeTrack track: Track,
-          publication: RemoteTrackPublication) {
+          didSubscribeTrack publication: RemoteTrackPublication) {
 
-    switch track {
+    switch publication.track {
     case let videoTrack as VideoTrack:
         videoTrack.add(renderer: remoteVideoView)
 
@@ -257,8 +252,8 @@ struct ParticipantView: View {
 try await room.localParticipant.publish(
     data: "Hello".data(using: .utf8)!,
     options: DataPublishOptions(
-        reliable: true,
-        topic: "chat"
+        topic: "chat",
+        reliable: true
     )
 )
 
@@ -266,8 +261,8 @@ try await room.localParticipant.publish(
 try await room.localParticipant.publish(
     data: messageData,
     options: DataPublishOptions(
-        reliable: true,
         topic: "private",
+        reliable: true,
         destinationIdentities: ["user-123"]
     )
 )
@@ -277,7 +272,7 @@ try await room.localParticipant.publish(
 
 ```swift
 func room(_ room: Room, participant: RemoteParticipant?,
-          didReceiveData data: Data, forTopic topic: String) {
+          didReceiveData data: Data, forTopic topic: String, encryptionType: EncryptionType) {
 
     if topic == "chat" {
         let message = String(data: data, encoding: .utf8)
@@ -311,7 +306,7 @@ With `adaptiveStream: true`, the SDK automatically optimizes video quality based
 await room.disconnect()
 
 // Handle unexpected disconnection
-func room(_ room: Room, didDisconnect error: LiveKitError?) {
+func room(_ room: Room, didDisconnectWithError error: LiveKitError?) {
     if let error = error {
         print("Disconnected with error: \(error)")
         // Attempt reconnect or show error UI
