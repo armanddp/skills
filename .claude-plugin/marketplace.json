@@ -15,6 +15,11 @@
       "description": "DevOps skills for Kubernetes, Google Cloud, and infrastructure management"
     },
     {
+      "name": "dimillian-ios",
+      "source": "./plugins/dimillian-ios",
+      "description": "iOS and SwiftUI development skills by Dimillian - Liquid Glass, performance, concurrency, and more"
+    },
+    {
       "name": "media-plugin",
       "source": "./plugins/media-plugin",
       "description": "FFmpeg/FFplay toolkit for streaming, playback, transcoding, and media inspection"
