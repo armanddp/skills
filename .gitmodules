@@ -1,0 +1,3 @@
+[submodule "plugins/dimillian-ios/skills"]
+	path = plugins/dimillian-ios/skills
+	url = https://github.com/Dimillian/Skills.git

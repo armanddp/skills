@@ -1,0 +1,10 @@
+{
+  "name": "dimillian-ios",
+  "description": "iOS and SwiftUI development skills by Dimillian - SwiftUI patterns, Liquid Glass, performance auditing, Swift concurrency, and more",
+  "version": "1.0.0",
+  "author": {
+    "name": "Thomas Ricouard (Dimillian)"
+  },
+  "keywords": ["ios", "swiftui", "swift", "liquid-glass", "concurrency", "performance", "xcode", "macos"],
+  "homepage": "https://github.com/Dimillian/Skills"
+}

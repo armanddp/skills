@@ -7,6 +7,7 @@ A Claude Code plugin marketplace containing specialized skills and tools for Liv
 | Plugin | Description | Skills |
 |--------|-------------|--------|
 | [devops-plugin](#devops-plugin) | Kubernetes and Google Cloud management | 2 |
+| [dimillian-ios](#dimillian-ios) | iOS/SwiftUI development by Dimillian | 9 |
 | [media-plugin](#media-plugin) | FFmpeg/FFplay streaming toolkit | 1 |
 | [livekit-plugin](#livekit-plugin) | LiveKit WebRTC expertise | 5 |
 | [ruby-on-rails-plugin](#ruby-on-rails-plugin) | Rails API with vanilla Rails patterns | 1 |
@@ -42,6 +43,7 @@ Enable plugins via Claude Code:
 /plugin enable media-plugin@livelabs-marketplace
 /plugin enable livekit-plugin@livelabs-marketplace
 /plugin enable ruby-on-rails-plugin@livelabs-marketplace
+/plugin enable dimillian-ios@livelabs-marketplace
 ```
 
 Or add to settings:
@@ -52,7 +54,8 @@ Or add to settings:
     "devops-plugin@livelabs-marketplace": true,
     "media-plugin@livelabs-marketplace": true,
     "livekit-plugin@livelabs-marketplace": true,
-    "ruby-on-rails-plugin@livelabs-marketplace": true
+    "ruby-on-rails-plugin@livelabs-marketplace": true,
+    "dimillian-ios@livelabs-marketplace": true
   }
 }
 ```
@@ -62,8 +65,11 @@ Or add to settings:
 For testing changes locally:
 
 ```bash
-# Clone the marketplace
-git clone git@github.com:armanddp/skills.git livelabs-marketplace
+# Clone the marketplace (with submodules)
+git clone --recurse-submodules git@github.com:armanddp/skills.git livelabs-marketplace
+
+# Or if already cloned, initialize submodules
+git submodule update --init --recursive
 
 # Add as local marketplace
 /plugin marketplace add ./livelabs-marketplace
@@ -88,6 +94,32 @@ DevOps skills for infrastructure management with per-project configuration persi
 - Per-project config stored in `.devops/k8s.json` and `.devops/gcloud.json`
 - Announces active config on first use in session
 - Change namespace/project on request
+
+---
+
+### dimillian-ios
+
+iOS and SwiftUI development skills by [Thomas Ricouard (Dimillian)](https://github.com/Dimillian). Included as a git submodule from [Dimillian/Skills](https://github.com/Dimillian/Skills).
+
+#### Skills
+
+| Skill | Triggers On | Description |
+|-------|-------------|-------------|
+| `app-store-changelog` | changelog, release notes | Generates App Store release notes from git history |
+| `gh-issue-fix-flow` | GitHub issue, fix flow | End-to-end GitHub issue resolution workflow |
+| `ios-debugger-agent` | iOS debug, simulator | Builds, runs, and debugs iOS apps on simulators |
+| `macos-spm-app-packaging` | macOS app, SwiftPM packaging | Scaffolds and packages SwiftPM macOS apps |
+| `swift-concurrency-expert` | Swift concurrency, async/await | Reviews and fixes Swift Concurrency compliance |
+| `swiftui-liquid-glass` | Liquid Glass, iOS 26, glass effect | iOS 26+ Liquid Glass API implementation |
+| `swiftui-performance-audit` | SwiftUI performance, rendering | Diagnoses and improves SwiftUI rendering performance |
+| `swiftui-ui-patterns` | SwiftUI patterns, view composition | Best practices for SwiftUI view composition |
+| `swiftui-view-refactor` | SwiftUI refactor, view structure | Standardizes view structure and dependencies |
+
+**Updating skills:**
+```bash
+cd plugins/dimillian-ios/skills
+git pull origin main
+```
 
 ---
 
@@ -200,6 +232,14 @@ livelabs-marketplace/
 │   │       │   └── SKILL.md
 │   │       └── gcloud-manage/
 │   │           └── SKILL.md
+│   ├── dimillian-ios/
+│   │   ├── .claude-plugin/
+│   │   │   └── plugin.json
+│   │   └── skills/              <- git submodule (Dimillian/Skills)
+│   │       ├── app-store-changelog/
+│   │       ├── swift-concurrency-expert/
+│   │       ├── swiftui-liquid-glass/
+│   │       └── ...
 │   ├── media-plugin/
 │   │   ├── .claude-plugin/
 │   │   │   └── plugin.json
