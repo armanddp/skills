@@ -1,6 +1,6 @@
 ---
 name: k8s-manage
-description: Kubernetes cluster management skill for common operations like deployments, scaling, debugging, and resource inspection. Use when working with kubectl, pods, deployments, services, or any Kubernetes resources. Also use when user wants to change or configure their kubernetes namespace or kubeconfig.
+description: Kubernetes cluster management skill for common operations like deployments, scaling, debugging, and resource inspection. Use when working with kubectl, pods, deployments, services, or any Kubernetes resources. Also use when user wants to change or configure their kubernetes namespace, kubeconfig, or Google Cloud account.
 ---
 
 # Kubernetes Management Skill
@@ -25,16 +25,22 @@ If `.devops/k8s.json` does not exist:
    {
      "kubeconfig": "~/.kube/config",
      "namespace": "my-namespace",
-     "context": "gke_project_region_cluster"
+     "context": "gke_project_region_cluster",
+     "gcloudAccount": "user@example.com"
    }
    ```
+   Note: `gcloudAccount` is optional and only needed for GKE clusters.
 
 ### First Run in a Session
 
 If `.devops/k8s.json` exists:
 1. Read the config file
 2. Build the **kubectl prefix** (see below)
-3. Announce: "Using Kubernetes: context `<context>`, namespace `<namespace>`"
+3. For GKE contexts, verify gcloud account matches config:
+   - If `gcloudAccount` is set, check current account with `gcloud config get-value account`
+   - If different, switch account and refresh credentials
+4. Announce: "Using Kubernetes: context `<context>`, namespace `<namespace>`"
+   - For GKE: also include "with gcloud account `<account>`"
 
 ### Changing Configuration
 
@@ -42,6 +48,63 @@ When the user asks to change namespace, kubeconfig, or context:
 1. Validate the new values work
 2. Update `.devops/k8s.json`
 3. Confirm the change
+
+## Google Cloud Account Management (GKE)
+
+For GKE clusters, kubectl credentials are tied to the active gcloud account. If you get permission errors, the gcloud account may need to be switched.
+
+### Checking Current Account
+```bash
+# List all authenticated accounts (active marked with *)
+gcloud auth list
+
+# Show current active account
+gcloud config get-value account
+```
+
+### Switching Accounts
+
+When the user asks to switch gcloud accounts or you encounter permission errors on a GKE context:
+
+1. List available accounts: `gcloud auth list`
+2. Switch to the requested account:
+   ```bash
+   gcloud config set account <email>
+   ```
+3. **Refresh GKE credentials** (required after switching):
+   ```bash
+   # Extract project and region from context name
+   # Context format: gke_<project>_<region>_<cluster>
+   gcloud container clusters get-credentials <cluster> --region=<region> --project=<project>
+   ```
+4. Update `.devops/k8s.json` with the new `gcloudAccount`
+5. Confirm: "Switched to gcloud account `<email>` and refreshed GKE credentials"
+
+### First Run with GKE Context
+
+If the context name starts with `gke_`:
+1. Check current gcloud account: `gcloud config get-value account`
+2. Ask user to confirm or specify which account to use
+3. Store the account in `.devops/k8s.json`
+
+### Handling Permission Errors
+
+If kubectl commands fail with "Forbidden" or permission errors on a GKE cluster:
+
+1. Check if the context is GKE (starts with `gke_`)
+2. Show current gcloud account: `gcloud config get-value account`
+3. List available accounts: `gcloud auth list`
+4. Ask user which account has access to this cluster
+5. Switch and refresh credentials as shown above
+
+**Example error and fix:**
+```
+Error: pods is forbidden: User "wrong@example.com" cannot list resource "pods"
+
+# Fix:
+gcloud config set account correct@example.com
+gcloud container clusters get-credentials streambridge-prod --region=europe-west3 --project=stream-bridge-live
+```
 
 ## Building the kubectl Prefix
 
