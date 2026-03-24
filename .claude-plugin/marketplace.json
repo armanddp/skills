@@ -33,6 +33,11 @@
       "name": "ruby-on-rails-plugin",
       "source": "./plugins/ruby-on-rails-plugin",
       "description": "Ruby on Rails API development with Basecamp/37signals vanilla Rails patterns and TDD"
+    },
+    {
+      "name": "cmux-plugin",
+      "source": "./plugins/cmux-plugin",
+      "description": "cmux terminal management for workspaces, splits, browser automation, notifications, and multi-agent workflows"
     }
   ]
 }

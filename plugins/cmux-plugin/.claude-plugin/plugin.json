@@ -1,0 +1,10 @@
+{
+  "name": "cmux-plugin",
+  "description": "cmux terminal management for workspaces, splits, browser automation, notifications, and multi-agent workflows",
+  "version": "1.0.0",
+  "author": {
+    "name": "LiveLabs"
+  },
+  "keywords": ["cmux", "terminal", "workspace", "split", "browser", "notifications", "multi-agent"],
+  "skills": "./skills"
+}
