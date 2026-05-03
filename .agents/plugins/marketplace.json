@@ -1,0 +1,20 @@
+{
+  "name": "livelabs-marketplace",
+  "interface": {
+    "displayName": "LiveLabs Marketplace"
+  },
+  "plugins": [
+    {
+      "name": "livelabs-product-plugin",
+      "source": {
+        "source": "local",
+        "path": "./plugins/livelabs-product-plugin"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

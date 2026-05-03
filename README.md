@@ -11,6 +11,7 @@ A Claude Code plugin marketplace containing specialized skills and tools for Liv
 | [media-plugin](#media-plugin) | FFmpeg/FFplay streaming toolkit | 1 |
 | [livekit-plugin](#livekit-plugin) | LiveKit WebRTC expertise | 5 |
 | [ruby-on-rails-plugin](#ruby-on-rails-plugin) | Rails API with vanilla Rails patterns | 1 |
+| [livelabs-product-plugin](#livelabs-product-plugin) | Lean LiveLabs product, research, moat, and GTM skills | 5 |
 
 ---
 
@@ -44,6 +45,7 @@ Enable plugins via Claude Code:
 /plugin enable livekit-plugin@livelabs-marketplace
 /plugin enable ruby-on-rails-plugin@livelabs-marketplace
 /plugin enable dimillian-ios@livelabs-marketplace
+/plugin enable livelabs-product-plugin@livelabs-marketplace
 ```
 
 Or add to settings:
@@ -55,7 +57,8 @@ Or add to settings:
     "media-plugin@livelabs-marketplace": true,
     "livekit-plugin@livelabs-marketplace": true,
     "ruby-on-rails-plugin@livelabs-marketplace": true,
-    "dimillian-ios@livelabs-marketplace": true
+    "dimillian-ios@livelabs-marketplace": true,
+    "livelabs-product-plugin@livelabs-marketplace": true
   }
 }
 ```
@@ -74,6 +77,12 @@ git submodule update --init --recursive
 # Add as local marketplace
 /plugin marketplace add ./livelabs-marketplace
 ```
+
+### Codex / OpenAI Plugins
+
+This repo also includes Codex-compatible plugin manifests for plugins that provide them, plus a Codex marketplace file at `.agents/plugins/marketplace.json`.
+
+For local testing in Codex-compatible environments, add this repository as a plugin marketplace and install `livelabs-product-plugin` from `livelabs-marketplace`.
 
 ---
 
@@ -197,6 +206,29 @@ Rails API development following Basecamp/37signals "vanilla Rails" philosophy.
 
 ---
 
+### livelabs-product-plugin
+
+Lean product skills for shaping LiveLabs products quickly and sharply, especially StreamBridge and Chumo.
+
+#### Skills
+
+| Skill | Triggers On | Description |
+|-------|-------------|-------------|
+| `livelabs-office-hours` | office hours, idea critique, narrow wedge | Adversarial founder review before building |
+| `livelabs-product-research` | ICP, Reddit/X/HN research, competitors, customer pain | Community/problem research that ends in a product decision |
+| `livelabs-product-shape` | MVP, PRD, prototype brief, product plan | Turns research or ideas into lean buildable specs |
+| `livelabs-technical-moat` | LiveKit, SRT/WebRTC, AI Producer, technical strategy | Analyzes defensibility and what is worth owning |
+| `livelabs-gtm` | positioning, pilot offer, landing copy, sales messaging | Converts product truth into sharp market communication |
+
+**Grounded in:**
+- StreamBridge repo docs and architecture
+- Director-first event setup
+- real camera invites, event pages, and producer controls
+- LiveKit/SRT/realtime video strategy
+- the broader Stream/SPC thesis: human cameras plus AI curation
+
+---
+
 ## How Skills Work
 
 Skills auto-trigger based on context. When you mention relevant topics, Claude automatically activates the appropriate skill.
@@ -215,6 +247,12 @@ Skills auto-trigger based on context. When you mention relevant topics, Claude a
 
 "Create a new Rails model for users"
 → Activates rails-api skill
+
+"Run office hours on this StreamBridge idea"
+→ Activates livelabs-office-hours skill
+
+"Research the ICP for Chumo institutes"
+→ Activates livelabs-product-research skill
 ```
 
 ## Directory Structure
@@ -263,12 +301,23 @@ livelabs-marketplace/
 │   │   │   └── livekit-egress-ingress/
 │   │   └── agents/
 │   │       └── livekit-reviewer.md
-│   └── ruby-on-rails-plugin/
+│   ├── ruby-on-rails-plugin/
+│   │   ├── .claude-plugin/
+│   │   │   └── plugin.json
+│   │   └── skills/
+│   │       └── rails-api/
+│   │           └── SKILL.md
+│   └── livelabs-product-plugin/
 │       ├── .claude-plugin/
 │       │   └── plugin.json
+│       ├── .codex-plugin/
+│       │   └── plugin.json
 │       └── skills/
-│           └── rails-api/
-│               └── SKILL.md
+│           ├── livelabs-office-hours/
+│           ├── livelabs-product-research/
+│           ├── livelabs-product-shape/
+│           ├── livelabs-technical-moat/
+│           └── livelabs-gtm/
 └── README.md
 ```
 

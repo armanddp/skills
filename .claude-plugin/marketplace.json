@@ -38,6 +38,11 @@
       "name": "cmux-plugin",
       "source": "./plugins/cmux-plugin",
       "description": "cmux terminal management for workspaces, splits, browser automation, notifications, and multi-agent workflows"
+    },
+    {
+      "name": "livelabs-product-plugin",
+      "source": "./plugins/livelabs-product-plugin",
+      "description": "Lean LiveLabs product skills for StreamBridge, Chumo, realtime video, LiveKit, technical moat, product shaping, research, and GTM"
     }
   ]
 }
