@@ -11,7 +11,7 @@ A Claude Code plugin marketplace containing specialized skills and tools for Liv
 | [media-plugin](#media-plugin) | FFmpeg/FFplay streaming toolkit | 1 |
 | [livekit-plugin](#livekit-plugin) | LiveKit WebRTC expertise | 5 |
 | [ruby-on-rails-plugin](#ruby-on-rails-plugin) | Rails API with vanilla Rails patterns | 1 |
-| [livelabs-product-plugin](#livelabs-product-plugin) | Lean LiveLabs product, research, moat, and GTM skills | 5 |
+| [livelabs-product-plugin](#livelabs-product-plugin) | Lean LiveLabs product, YC RFS, research, moat, and GTM skills | 6 |
 
 ---
 
@@ -219,12 +219,14 @@ Lean product skills for shaping LiveLabs products quickly and sharply, especiall
 | `livelabs-product-shape` | MVP, PRD, prototype brief, product plan | Turns research or ideas into lean buildable specs |
 | `livelabs-technical-moat` | LiveKit, SRT/WebRTC, AI Producer, technical strategy | Analyzes defensibility and what is worth owning |
 | `livelabs-gtm` | positioning, pilot offer, landing copy, sales messaging | Converts product truth into sharp market communication |
+| `livelabs-yc-rfs-validator` | YC RFS, YC application, investor framing, startup validation | Validates ideas/specs against current YC Requests for Startups |
 
 **Grounded in:**
 - StreamBridge repo docs and architecture
 - Director-first event setup
 - real camera invites, event pages, and producer controls
 - LiveKit/SRT/realtime video strategy
+- current YC Requests for Startups
 - the broader Stream/SPC thesis: human cameras plus AI curation
 
 ---
@@ -253,6 +255,9 @@ Skills auto-trigger based on context. When you mention relevant topics, Claude a
 
 "Research the ICP for Chumo institutes"
 → Activates livelabs-product-research skill
+
+"Validate StreamBridge against the current YC RFS"
+→ Activates livelabs-yc-rfs-validator skill
 ```
 
 ## Directory Structure
@@ -317,7 +322,8 @@ livelabs-marketplace/
 │           ├── livelabs-product-research/
 │           ├── livelabs-product-shape/
 │           ├── livelabs-technical-moat/
-│           └── livelabs-gtm/
+│           ├── livelabs-gtm/
+│           └── livelabs-yc-rfs-validator/
 └── README.md
 ```
 

@@ -1,7 +1,7 @@
 {
   "name": "livelabs-product-plugin",
-  "version": "1.0.0",
-  "description": "Lean LiveLabs product skills for StreamBridge, Chumo, realtime video, LiveKit, technical moat, product shaping, research, and GTM",
+  "version": "1.1.0",
+  "description": "Lean LiveLabs product skills for StreamBridge, Chumo, realtime video, LiveKit, YC RFS validation, technical moat, product shaping, research, and GTM",
   "author": {
     "name": "LiveLabs",
     "url": "https://livelabs.ventures"
@@ -15,6 +15,8 @@
     "product",
     "gtm",
     "research",
+    "yc",
+    "rfs",
     "livekit",
     "video",
     "startup"
@@ -22,15 +24,15 @@
   "skills": "./skills",
   "interface": {
     "displayName": "LiveLabs Product",
-    "shortDescription": "Lean product, research, moat, and GTM skills for LiveLabs",
-    "longDescription": "LiveLabs product skills for shaping StreamBridge and Chumo from cutting-edge realtime video and AI ideas into focused product bets, research-backed ICPs, lean MVP specs, defensible technical moats, and sharp go-to-market messaging.",
+    "shortDescription": "Lean product, YC RFS, research, moat, and GTM skills",
+    "longDescription": "LiveLabs product skills for shaping StreamBridge and Chumo from cutting-edge realtime video and AI ideas into focused product bets, YC RFS-aligned startup framing, research-backed ICPs, lean MVP specs, defensible technical moats, and sharp go-to-market messaging.",
     "developerName": "LiveLabs",
     "category": "Productivity",
     "capabilities": ["Interactive", "Research", "Write"],
     "websiteURL": "https://livelabs.ventures",
     "defaultPrompt": [
       "Run LiveLabs office hours on this idea.",
-      "Research the ICP and pain for this feature.",
+      "Validate this idea against YC RFS.",
       "Shape this into a lean StreamBridge MVP."
     ],
     "brandColor": "#F5C84B"
