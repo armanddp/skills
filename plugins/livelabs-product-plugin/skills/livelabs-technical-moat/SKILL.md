@@ -1,6 +1,6 @@
 ---
 name: livelabs-technical-moat
-description: Analyze LiveLabs technical strategy and defensibility. Use for StreamBridge, Chumo, LiveKit, SRT/WebRTC, AI Producer, spatial video, real-time systems, streaming infrastructure, agentic event pages, data moats, architecture tradeoffs, build-vs-buy, and technology trend positioning.
+description: Analyze technical strategy and defensibility for startup ideas and product specs. Use for AI-native products, real-time systems, agentic workflows, infrastructure bets, data moats, architecture tradeoffs, build-vs-buy, technology trend positioning, and what is worth owning. Works with caller-supplied context for any product, stack, or company.
 ---
 
 # LiveLabs Technical Moat
@@ -9,23 +9,16 @@ Use this when the question is not just “can we build it?” but “does buildi
 
 ## Grounding
 
-Load `references/moat-lens.md` and `references/streambridge-context.md`. For StreamBridge, inspect code/docs before making claims:
-- `ARCHITECTURE.md`
-- `docs/SRT_ROUTING_ARCHITECTURE.md`
-- `docs/features/agentic-event-pages/AGENTIC_EVENT_PAGES.md`
-- `services/director/README.md`
-- `docs/skills/LIVEKIT.md`
-
-Use current official docs for mutable platform claims, especially LiveKit.
+Load `references/moat-lens.md`. Inspect supplied code/docs before making claims. Use current official docs for mutable platform, framework, vendor, or standards claims.
 
 ## Analysis Lenses
 
 1. **Latency and reliability**: What hard realtime constraints does the product own?
-2. **Workflow control**: Which painful multi-tool workflow becomes one LiveLabs primitive?
+2. **Workflow control**: Which painful multi-tool workflow becomes one product primitive?
 3. **Data advantage**: What event/camera/operator/viewer/AI-director data compounds?
 4. **Distribution wedge**: Which technical feature creates a demo that spreads?
 5. **Replacement cost**: What would be hard to rip out after repeated events?
-6. **Stack leverage**: Where does LiveKit/SRT/Rails/Director accelerate us, and where does it commoditize us?
+6. **Stack leverage**: Where does the stack accelerate us, and where does it commoditize us?
 7. **Trend fit**: Smart glasses, multimodal AI, citizen video, spatial interfaces, and trust/authenticity.
 
 ## Output

@@ -11,7 +11,7 @@ A Claude Code plugin marketplace containing specialized skills and tools for Liv
 | [media-plugin](#media-plugin) | FFmpeg/FFplay streaming toolkit | 1 |
 | [livekit-plugin](#livekit-plugin) | LiveKit WebRTC expertise | 5 |
 | [ruby-on-rails-plugin](#ruby-on-rails-plugin) | Rails API with vanilla Rails patterns | 1 |
-| [livelabs-product-plugin](#livelabs-product-plugin) | Lean LiveLabs product, YC RFS, research, moat, and GTM skills | 6 |
+| [livelabs-product-plugin](#livelabs-product-plugin) | Lean product, YC RFS, research, moat, and GTM skills | 6 |
 
 ---
 
@@ -208,7 +208,7 @@ Rails API development following Basecamp/37signals "vanilla Rails" philosophy.
 
 ### livelabs-product-plugin
 
-Lean product skills for shaping LiveLabs products quickly and sharply, especially StreamBridge and Chumo.
+Lean product skills for shaping startup ideas quickly and sharply. The skills are context-neutral: provide the product, market, repo, spec, customer evidence, or company background at use time.
 
 #### Skills
 
@@ -217,17 +217,18 @@ Lean product skills for shaping LiveLabs products quickly and sharply, especiall
 | `livelabs-office-hours` | office hours, idea critique, narrow wedge | Adversarial founder review before building |
 | `livelabs-product-research` | ICP, Reddit/X/HN research, competitors, customer pain | Community/problem research that ends in a product decision |
 | `livelabs-product-shape` | MVP, PRD, prototype brief, product plan | Turns research or ideas into lean buildable specs |
-| `livelabs-technical-moat` | LiveKit, SRT/WebRTC, AI Producer, technical strategy | Analyzes defensibility and what is worth owning |
+| `livelabs-technical-moat` | architecture, stack leverage, AI workflows, technical strategy | Analyzes defensibility and what is worth owning |
 | `livelabs-gtm` | positioning, pilot offer, landing copy, sales messaging | Converts product truth into sharp market communication |
 | `livelabs-yc-rfs-validator` | YC RFS, YC application, investor framing, startup validation | Validates ideas/specs against current YC Requests for Startups |
 
-**Grounded in:**
-- StreamBridge repo docs and architecture
-- Director-first event setup
-- real camera invites, event pages, and producer controls
-- LiveKit/SRT/realtime video strategy
-- current YC Requests for Startups
-- the broader Stream/SPC thesis: human cameras plus AI curation
+**Designed for:**
+- caller-supplied product/spec/repo context
+- office-hours idea challenge
+- research-backed ICP and pain discovery
+- lean MVP/spec shaping
+- technical moat analysis
+- current YC Requests for Startups validation
+- GTM positioning and pilot offers
 
 ---
 
@@ -250,13 +251,13 @@ Skills auto-trigger based on context. When you mention relevant topics, Claude a
 "Create a new Rails model for users"
 → Activates rails-api skill
 
-"Run office hours on this StreamBridge idea"
+"Run office hours on this idea"
 → Activates livelabs-office-hours skill
 
-"Research the ICP for Chumo institutes"
+"Research the ICP for this product"
 → Activates livelabs-product-research skill
 
-"Validate StreamBridge against the current YC RFS"
+"Validate this idea against the current YC RFS"
 → Activates livelabs-yc-rfs-validator skill
 ```
 

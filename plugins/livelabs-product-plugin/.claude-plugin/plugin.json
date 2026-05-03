@@ -1,21 +1,17 @@
 {
   "name": "livelabs-product-plugin",
-  "description": "Lean LiveLabs product skills for StreamBridge, Chumo, realtime video, LiveKit, YC RFS validation, technical moat, product shaping, research, and GTM",
-  "version": "1.1.0",
+  "description": "Lean product skills for office hours, research, shaping, technical moat, YC RFS validation, and GTM",
+  "version": "1.2.0",
   "author": {
     "name": "LiveLabs"
   },
   "keywords": [
     "livelabs",
-    "streambridge",
-    "chumo",
     "product",
     "gtm",
     "research",
     "yc",
     "rfs",
-    "livekit",
-    "video",
     "startup"
   ],
   "skills": "./skills"

@@ -33,7 +33,7 @@
 [data, workflow, distribution, infrastructure, or learning loop]
 
 ## Founder-Market Fit
-[why LiveLabs/Armando/team are unusually suited]
+[why this team is unusually suited]
 
 ## Weak Spots
 - [weakness] -> [fix/test]

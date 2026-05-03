@@ -1,18 +1,15 @@
 ---
 name: livelabs-office-hours
-description: Challenge LiveLabs product ideas before building. Use for StreamBridge, Chumo, realtime video, LiveKit, AI producer, event-network, or GTM ideas when the user asks for office hours, idea critique, founder review, narrow wedge, demand reality, or whether something is worth building.
+description: Challenge product and startup ideas before building. Use when the user asks for office hours, idea critique, founder review, narrow wedge, demand reality, strategic pushback, or whether something is worth building. Works with caller-supplied context for any product, market, or company.
 ---
 
 # LiveLabs Office Hours
 
-Use this as the fast adversarial product review for LiveLabs. The job is not to produce a polished doc first. The job is to find the sharpest true wedge.
+Use this as a fast adversarial product review. The job is not to produce a polished doc first. The job is to find the sharpest true wedge.
 
 ## Grounding
 
-Before challenging the idea, load only what is needed:
-- StreamBridge context: `references/streambridge-context.md`
-- Current repo docs if the idea touches product reality: `/Users/m1/source/livelabs/streambridge-app/docs/features/v1/V1_PRODUCT_PRD.md`, `docs/strategy/positioning-statement.md`, `ARCHITECTURE.md`
-- SPC/network context if the idea touches vision/fundraising: Notion page `2f8faf58ca458146b6f5e6edcfb86128`
+Before challenging the idea, use only context the user provides or context explicitly available in the current workspace/request. If context is missing, ask for the smallest missing artifact: idea summary, target user, current spec, customer evidence, or repo/docs location.
 
 ## Workflow
 
@@ -22,8 +19,8 @@ Run a tight office-hours loop. Ask one question at a time when live with the use
 2. **Status quo workaround**: What manual workflow, spreadsheet, OBS/vMix setup, WhatsApp group, or vendor stack do they tolerate today?
 3. **Desperate specificity**: Name the exact buyer/user, event type, clock pressure, and budget owner.
 4. **Narrowest paid wedge**: What can be shipped in days that someone would pay for or pilot this month?
-5. **Live evidence**: What have we observed in pilots, support, Discord, repo telemetry, or customer conversations?
-6. **Future fit**: If this works, how does it compound toward human cameras + AI curation + spatial broadcast network?
+5. **Live evidence**: What have we observed in pilots, support, community channels, repo telemetry, or customer conversations?
+6. **Future fit**: If this works, how does it compound toward the stated company/product vision?
 
 ## Output
 

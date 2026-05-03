@@ -1,26 +1,17 @@
 # Research Playbook
 
-Use this sequence for LiveLabs research.
+Use this sequence for product research.
 
 ## Queries
 
 Use combinations like:
-- `"multi camera" OBS remote cameras problem`
-- `site:reddit.com OBS SRT remote camera`
-- `site:reddit.com live stream school sports parents`
-- `site:reddit.com LiveKit voice video agents production`
-- `site:news.ycombinator.com live streaming WebRTC SRT OBS`
-- `vMix remote camera alternatives`
-- `LiveU Solo alternatives grassroots sports`
-- `school sports livestream problems`
-- `church livestream volunteer multi camera`
-- `university event streaming AV workflow`
-
-For Chumo/institutes:
-- `university lecture livestream multiple cameras workflow`
-- `CPD webinar streaming certificates problem`
-- `professional institute webinar platform pain`
-- `Zoom webinar alternatives CPD live streaming`
+Start from the user's product/market context. Generate search queries that combine:
+- role/persona
+- painful workflow
+- existing workaround/tool
+- competitor/alternative
+- community source, e.g. `site:reddit.com`, `site:news.ycombinator.com`, X, YouTube, forums
+- recent year when market conditions are changing
 
 ## Evidence Rules
 
@@ -38,7 +29,7 @@ Score each ICP 1-5:
 - reachability
 - frequency of event
 - current workaround pain
-- StreamBridge capability fit
+- product capability fit
 - path to visible demo
 
 Prefer the ICP with the best combined urgency + demo visibility, not the largest theoretical market.

@@ -1,6 +1,6 @@
 ---
 name: livelabs-product-research
-description: Run lean but deep product research for LiveLabs. Use when researching StreamBridge, Chumo, realtime video, LiveKit, broadcast workflows, ICPs, communities, Reddit, X, Hacker News, YouTube, competitors, customer pain, market wedges, or message language for product decisions.
+description: Run lean but deep product research for startup ideas and product bets. Use when researching ICPs, communities, Reddit, X, Hacker News, YouTube, competitors, customer pain, market wedges, workflows, or message language for product decisions. Works with caller-supplied context for any product, market, or company.
 ---
 
 # LiveLabs Product Research
@@ -9,19 +9,19 @@ Use this to turn messy market curiosity into a narrow ICP, a painful workflow, a
 
 ## Grounding
 
-Load `references/research-playbook.md` and `references/streambridge-context.md`. Then gather current evidence from web/community sources and from the repo/docs when relevant.
+Load `references/research-playbook.md`. Then gather current evidence from web/community sources and from the repo/docs when the user provides them.
 
 Prefer primary/current sources:
 - community threads: Reddit, X, HN, Discord/forum posts, YouTube comments when accessible
 - product/docs: competitor docs, changelogs, support pages, pricing, job posts
-- StreamBridge repo: `/Users/m1/source/livelabs/streambridge-app/docs/features/v1/`, `docs/strategy/`, `frontend/web/src/data/faq.json`
+- supplied product context: specs, docs, code, pitch docs, sales notes, support tickets, analytics, interview notes
 
 ## Research Passes
 
-1. **Problem map**: What jobs are people trying to do around live video, multi-camera, field production, remote cameras, event pages, AI production, or institutional streaming?
+1. **Problem map**: What jobs are people trying to do in the target market/workflow?
 2. **Pain language**: Capture exact phrases. Preserve wording. Do not translate too early.
-3. **ICP candidates**: Rank by urgency, reachable community, budget, existing workaround, and LiveLabs unfair advantage.
-4. **Alternatives**: Map actual alternatives: OBS/vMix + SRT, LiveU, Restream, YouTube, volunteers, WhatsApp, manual AV teams, institute LMS/webinar stacks.
+3. **ICP candidates**: Rank by urgency, reachable community, budget, existing workaround, and unfair advantage.
+4. **Alternatives**: Map actual alternatives: tools, agencies, spreadsheets, internal teams, manual workarounds, incumbents, and doing nothing.
 5. **Wedge**: Pick the smallest feature/workflow that speaks directly to one ICP.
 6. **Message extraction**: Convert pain into landing-page, outbound, demo, and product copy.
 
@@ -51,7 +51,7 @@ Prefer primary/current sources:
 ## Message
 - Problem line:
 - Why now:
-- Why StreamBridge/LiveLabs:
+- Why us:
 - Demo promise:
 
 ## Risks

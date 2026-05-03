@@ -12,8 +12,8 @@
 - Current workaround:
 - Pain:
 
-## LiveLabs Advantage
-[why StreamBridge/Chumo can win this workflow]
+## Unfair Advantage
+[why this team/product can win this workflow]
 
 ## MVP
 The smallest usable version:
@@ -23,7 +23,7 @@ The smallest usable version:
 
 ## Journey
 1. Producer/user starts with:
-2. Director/product creates:
+2. Product/system creates:
 3. Live operator/user sees:
 4. Viewer/customer gets:
 5. Success moment:
@@ -31,7 +31,7 @@ The smallest usable version:
 ## System Binding
 - Existing objects/APIs:
 - New objects/APIs:
-- LiveKit/SRT/Director/primitive dependencies:
+- platform/infrastructure/agent/primitive dependencies:
 - Data captured:
 
 ## Out of Scope

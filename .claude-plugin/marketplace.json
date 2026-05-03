@@ -42,7 +42,7 @@
     {
       "name": "livelabs-product-plugin",
       "source": "./plugins/livelabs-product-plugin",
-      "description": "Lean LiveLabs product skills for StreamBridge, Chumo, realtime video, LiveKit, YC RFS validation, technical moat, product shaping, research, and GTM"
+      "description": "Lean product skills for office hours, research, shaping, technical moat, YC RFS validation, and GTM"
     }
   ]
 }

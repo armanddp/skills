@@ -16,7 +16,7 @@
 [falsifiable demo promise]
 
 ## Positioning
-For [ICP] who [need], StreamBridge/Chumo is [category] that [outcome]. Unlike [status quo], it [differentiator].
+For [ICP] who [need], [product] is [category] that [outcome]. Unlike [status quo], it [differentiator].
 
 ## Message Set
 - Hero:
